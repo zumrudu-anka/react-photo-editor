@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+*, *::before, *::after{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "image sidebar" "slider sidebar";
+  height: 100vh;
+  width: 100vw;
+  background-color: #DADADA;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-image{
+  grid-area: image;
+  background-image: url("https://source.unsplash.com/EwKXn5CapA4");
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 15px;
+}
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: #1a3f6b;
+  border-left: 1px solid#0074ff;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.sidebar-item{
   color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #102a4a;
+  padding: 2rem;
+  position: relative;
+  transition: background-color 150ms;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-item:hover,
+.sidebar-item:focus{
+  background-color:  #061d38;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-item.active{
+  background-color: #021224;
+}
+
+.sidebar-item::after{
+  content: "";
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  height: 1px;
+  background-color: #061d38;
+}
+
+.sidebar-item:last-child::after{
+  display: none;
+}
+
+.slider-container{
+  grid-area: slider;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.slider{
+  width: 100%;
+  cursor: pointer;
 }
