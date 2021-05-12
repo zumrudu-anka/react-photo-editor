@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # 🖼🖌 Photo Editor With React
 
 <p align="center">
-  <img src="https://github.com/zumrudu-anka/react-photo-editor/blob/master/presentation/react-photo-editor.gif"/>
+  <img src="https://github.com/zumrudu-anka/react-photo-editor/blob/gh-pages/presentation/react-photo-editor.gif"/>
 </p>
 <hr>
 
